@@ -9,6 +9,10 @@ img {
     float: left;
 }
 .rando-user {
+    padding: 20px;
+    border-radius: 30px;
+    margin-top: 20px;
+    background-color: #EEE;
     float: left;
     display: inline-block;
 }
