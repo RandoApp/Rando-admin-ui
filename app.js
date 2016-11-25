@@ -13,10 +13,6 @@ var randoApp = angular.module("randoApp", [
 randoApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider
-    .when('/auth', {
-      templateUrl: '/template/auth.html',
-      controller: 'AuthController'
-    })
     .when('/randos', {
       templateUrl: '/template/randos.html',
       controller: 'RandosController'
@@ -33,17 +29,9 @@ randoApp.config(['$routeProvider',
       templateUrl: '/template/reports.html',
       controller: 'LogsController'
     })
-    .when('/logs', {
-      templateUrl: '/template/logs.html',
-      controller: 'LogsController'
-    })
     .when('/api', {
       templateUrl: '/template/api.html',
       controller: 'ApiController'
-    })
-    .when('/log/:logFile', {
-      templateUrl: '/template/log.html',
-      controller: 'LogController'
     })
     .when('/status', {
       templateUrl: '/template/status.html',
