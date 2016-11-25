@@ -12,4 +12,4 @@ config/runtime.*
 #istanbul code coverage
 coverage
 
-front-end/bower_components
+bower_components
