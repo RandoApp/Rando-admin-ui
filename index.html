@@ -15,7 +15,7 @@
     <link href="/css/rando.css" rel="stylesheet">
   </head>
   <body>
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" ng-controller="TabsController as tabs">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -28,10 +28,10 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Settings</a></li>
+            <li><button type="button" class="btn glyphicon glyphicon-search" ng-click="tabs.search()"></button></li>
           </ul>
           <form class="navbar-form navbar-right">
-            <input class="form-control" placeholder="Search..." type="text">
+            <input id="search" class="form-control" placeholder="Search..." type="text">
           </form>
         </div>
       </div>
@@ -70,7 +70,5 @@
     <script src="/src/controller/randosController.js"></script>
     <script src="/src/controller/starsController.js"></script>
     <script src="/src/controller/statusController.js"></script>
-    <script src="/src/controller/logsController.js"></script>
-    <script src="/src/controller/logController.js"></script>
-    <script src="/src/controller/apiController.js"></script>
+    <script src="/src/controller/tabsController.js"></script>
 </body></html>

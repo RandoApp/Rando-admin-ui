@@ -1,7 +1,7 @@
-var starsController = angular.module("starsController", ['ngResource']);
+var randoApp = angular.module("randoApp");
 
-starsController.controller("StarsController", function($scope, $http, $routeParams) {
-    $http.get('/stars?token=' + localStorage.getItem("authToken")).success(function (stars) {
+randoApp.controller("StarsController", function($scope, $http, $routeParams) {
+    $http.get('/stars').success(function (stars) {
         for (var i = 0; i < stars.length; i++) {
             stars[i].datePritty = moment(stars[i].date).format('DD MMMM YYYY, HH:mm:ss');
         }

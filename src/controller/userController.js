@@ -1,7 +1,7 @@
-var userController = angular.module("userController", ['ngResource']);
+var randoApp = angular.module("randoApp");
 
-userController.controller("UserController", function($scope, $http, $routeParams, $route) {
-    $http.get('/user?email=' + $routeParams.email + '&token=' + localStorage.getItem("authToken")).success(function (user) {
+randoApp.controller("UserController", function($scope, $http, $routeParams, $route) {
+    $http.get('/user?email=' + $routeParams.email).success(function (user) {
         $scope.user = user;
         $scope.user.banPritty = moment(user.ban).format('DD MMMM YYYY, HH:mm:ss');
 

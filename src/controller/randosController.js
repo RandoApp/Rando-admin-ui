@@ -1,6 +1,6 @@
-var randosController = angular.module("randosController", ['ngResource']);
+var randoApp = angular.module("randoApp");
 
-randosController.controller("RandosController", function($scope, $http, $routeParams) {
+randoApp.controller("RandosController", function($scope, $http, $routeParams) {
     $http.get('/randos').success(function (randos) {
         for (var i = 0; i < randos.length; i++) {
             randos[i].creationPritty = moment(randos[i].creation).format('DD MMMM YYYY, HH:mm:ss');

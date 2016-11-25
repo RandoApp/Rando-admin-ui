@@ -1,7 +1,7 @@
-var statusController = angular.module("statusController", ['ngResource']);
+var randoApp = angular.module("randoApp");
 
-statusController.controller("StatusController", function($scope, $http, $routeParams) {
-    $http.get('/status?token=' + localStorage.getItem("authToken")).success(function (status) {
+randoApp.controller("StatusController", function($scope, $http, $routeParams) {
+    $http.get('/status').success(function (status) {
         drawDiskSpacePie(status.disk);
         drawMemoryPie(status.memory);
     });
