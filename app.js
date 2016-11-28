@@ -30,6 +30,10 @@ randoApp.config(['$routeProvider',
       templateUrl: '/template/status.html',
       controller: 'StatusController'
     })
+    .when('/calendar', {
+      templateUrl: '/template/calendar.html',
+      controller: 'CalendarController'
+    })
     .otherwise({redirectTo: '/status'});
   }]);
 

@@ -69,3 +69,10 @@ img {
     margin-top: 7px;
     margin-left: 7px;
 }
+
+.calendar-rando {
+    float: left;
+    width: 500px;
+    margin-left: 10px;
+    margin-right: 10px;
+}

@@ -1,0 +1,17 @@
+<div class="rando-user">
+  <img src="{{ rando.imageSizeURL.small }}" data-ng-click="flipRando(rando, $event)"/>
+  <div class="info">
+    <a href="javascript:void(0);" data-ng-click="starOrUnstar(rando.email, rando.randoId, $event)" class="star"></a>
+    <h3 class="user"><a href="#/user/{{ rando.email }}">{{ rando.email }}</a></h3>
+    <div class="datetime">{{ rando.creationPritty }}</div>
+    <div class="randoId not-important">id: {{ rando.randoId }}</div>
+    <div class="location not-important">lat: {{ rando.location.latitude}} long: {{ rando.location.longitude }}</div>
+    <div data-ng-if="rando.user.delete != 1">
+      <button class="btn btn-default not-important" data-ng-click="deleteOrUnDeleteRando(rando.email, rando.randoId, $event);">Delete {{ rando.randoId}}</button>
+    </div>
+    <div data-ng-if="rando.user.delete == 1">
+      <button class="btn btn-default not-important" data-ng-click="deleteOrUnDeleteRando(rando.email, rando.randoId, $event);">Undelete {{ rando.randoId}}</button>
+    </div>
+  </div>
+</div>
+<br/>
