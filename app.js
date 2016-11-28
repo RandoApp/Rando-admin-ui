@@ -1,12 +1,5 @@
 var randoApp = angular.module("randoApp", [
   'ngRoute',
-  'randosController',
-  'starsController',
-  'userController',
-  'statusController',
-  'logController',
-  'logsController',
-  'apiController',
   'ngTable'
 ]);
 
