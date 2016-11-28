@@ -23,45 +23,13 @@
     <div class="col-md-6">
       <h2 class="text-center">Stranger (IN):</h2>
       <div data-ng-repeat="rando in user.in">
-        <div class="rando-user">
-          <img src="{{ rando.imageSizeURL.small }}" data-ng-click="flipRando(rando, $event)"/>
-          <div class="info">
-            <a href="javascript:void(0);" data-ng-click="starOrUnstar(user.email, rando.randoId, $event)" class="star"></a>
-            <h3 class="user"><a href="#/user/{{ rando.user.email }}">{{ rando.email }}</a></h3>
-            <div class="datetime">{{ rando.creationPritty }}</div>
-            <div class="randoId not-important">id: {{ rando.randoId }}</div>
-            <div class="location not-important">lat: {{ rando.location.latitude}} long: {{ rando.location.longitude }}</div>
-            <div data-ng-if="rando.user.delete != 1">
-              <button class="btn btn-default not-important" data-ng-click="deleteOrUnDeleteRando(rando.email, rando.randoId, $event);">Delete {{ rando.randoId}}</button>
-            </div>
-            <div data-ng-if="rando.user.delete == 1">
-              <button class="btn btn-default not-important" data-ng-click="deleteOrUnDeleteRando(rando.email, rando.randoId, $event);">Undelete {{ rando.randoId}}</button>
-            </div>
-          </div>
-        </div>
-        <br/>
+        <rando-widget></rando-widget>
       </div>
     </div>
     <div class="col-md-6">
       <h2 class="text-center">User (OUT):</h2>
       <div data-ng-repeat="rando in user.out">
-        <div class="rando-user">
-          <img src="{{ rando.imageSizeURL.small }}" data-ng-click="flipRando(rando, $event)"/>
-          <div class="info">
-            <a href="javascript:void(0);" data-ng-click="starOrUnstar(rando.email, rando.randoId, $event)" class="star"></a>
-            <h3 class="user"><a href="#/user/{{ rando.user.email }}">{{ rando.email }}</a></h3>
-            <div class="datetime">{{ rando.creationPritty }}</div>
-            <div class="randoId not-important">id: {{ rando.randoId }}</div>
-            <div class="location not-important">lat: {{ rando.location.latitude}} long: {{ rando.location.longitude }}</div>
-            <div data-ng-if="rando.user.delete != 1">
-              <button class="btn btn-default not-important" data-ng-click="deleteOrUnDeleteRando(rando.email, rando.randoId, $event);">Delete {{ rando.randoId}}</button>
-            </div>
-            <div data-ng-if="rando.user.delete == 1">
-              <button class="btn btn-default not-important" data-ng-click="deleteOrUnDeleteRando(rando.email, rando.randoId, $event);">Undelete {{ rando.randoId}}</button>
-            </div>
-          </div>
-        </div>
-        <br/>
+        <rando-widget></rando-widget>
       </div>
     </div>
   </div>
