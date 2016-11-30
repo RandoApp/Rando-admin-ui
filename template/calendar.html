@@ -49,16 +49,18 @@ $(function () {
   $("#startdatetimepicker").datetimepicker(dateTimeConfig);
   $("#enddatetimepicker").datetimepicker(dateTimeConfig);
 
-  var yesterday = new Date();
-  yesterday.setHours(-24);
-  yesterday.setMinutes(0);
-  yesterday.setSeconds(0);
+  var yesterday = moment().utc();
+  yesterday.days(yesterday.days() - 1);
+  yesterday.hours(0);
+  yesterday.minutes(0);
+  yesterday.seconds(0);
+
   $("#startdatetimepicker").data("DateTimePicker").date(yesterday);
 
-  var today = new Date();
-  today.setHours(0);
-  today.setMinutes(0);
-  today.setSeconds(0);
+  var today = moment().utc();
+  today.hours(0);
+  today.minutes(0);
+  today.seconds(0);
   $("#enddatetimepicker").data("DateTimePicker").date(today);
 });
 </script>
