@@ -21,7 +21,7 @@
     "moment": "2.8.1",
     "d3": "*",
     "d3pie": "0.1.3",
-    "eonasdan-bootstrap-datetimepicker": "4.15.35"
-
+    "eonasdan-bootstrap-datetimepicker": "4.15.35",
+    "angular-loading-bar": "0.8.0"
   }
 }

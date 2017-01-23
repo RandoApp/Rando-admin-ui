@@ -1,0 +1,35 @@
+<h2 class="sub-header">{{ anomalies.length }} Anomalies</h2>
+
+<ul class="nav nav-pills" role="tablist">
+  <li class="anomaly-badge active" role="presentation"><a href="javascript:void(0);" ng-click="anomalies = allAnomalies;">ALL<span class="badge">{{ allAnomalies.length }}</span></a></li>
+  <li class="anomaly-badge" role="presentation"><a href="javascript:void(0);" ng-click="filterByTag('Rando is too old');">Rando is too old <span class="badge">{{ countByTag(allAnomalies, 'Rando is too old') }}</span></a></li>
+  <li class="anomaly-badge" role="presentation"><a href="javascript:void(0);" ng-click="filterByTag('nude');">nude <span class="badge">{{ countByTag(allAnomalies, 'nude') }}</span></a></li>
+  <li class="anomaly-badge" role="presentation"><a href="javascript:void(0);" ng-click="filterByTag('face');">face <span class="badge">{{ countByTag(allAnomalies, 'face') }}</span></a></li>
+  <li class="anomaly-badge" role="presentation"><a href="javascript:void(0);" ng-click="filterByTag('monocolor');">monocolor <span class="badge">{{ countByTag(allAnomalies, 'monocolor') }}</span></a></li>
+</ul>
+
+<div data-ng-repeat="anomaly in anomalies">
+    <div class="anomaly">
+      <div class="info">
+        <div class="randoId">id: {{ anomaly.rando.randoId }}</div>
+        <div class="datetime">Detected at: {{ anomaly.detectedAtPritty }}</div>
+        <h2><span class="label label-danger">{{ anomaly.discrepancyReason }}</span></h2>
+        <div class="user"><a href="#/user/{{ anomaly.rando.email }}">{{ anomaly.rando.email }}</a></div>
+        <div class="datetime">{{ anomaly.rando.creationPritty }}</div>
+        <div class="location not-important">lat: {{ anomaly.rando.location.latitude}} long: {{ anomaly.rando.location.longitude }}</div>
+      </div>
+      <img src="{{ anomaly.rando.imageSizeURL.small }}" data-ng-click="flipRando(rando, $event)"/>
+      <div class="controls">
+        <button class="btn btn-lg btn-default" type="button">Move to Randos bucket</button>
+        <button class="btn btn-lg btn-default" type="button">Delete</button>
+    </div>
+</div>
+
+<script>
+jQuery(document).ready(function () {
+  jQuery(".anomaly-badge").on('click', function () {
+    jQuery(".anomaly-badge").removeClass('active');
+    jQuery(this).addClass('active');
+  });
+});
+</script>
