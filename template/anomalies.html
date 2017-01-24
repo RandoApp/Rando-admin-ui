@@ -19,9 +19,9 @@
         <div class="location not-important">lat: {{ anomaly.rando.location.latitude}} long: {{ anomaly.rando.location.longitude }}</div>
       </div>
       <img src="{{ anomaly.rando.imageSizeURL.small }}" data-ng-click="flipRando(rando, $event)"/>
-      <div class="controls">
-        <button class="btn btn-lg btn-default" type="button">Move to Randos bucket</button>
-        <button class="btn btn-lg btn-default" type="button">Delete</button>
+      <div class="anomaly-controls">
+        <button ng-click="moveToRandosBucket(anomaly.rando.randoId);" class="btn btn-lg btn-success" type="button"><span class="glyphicon glyphicon-log-in rotate-90" aria-hidden="true"></span> Move to Randos bucket without bad tags</button>
+        <button ng-click="deleteFromAnomalies(anomaly.rando.randoId);" class="btn btn-lg btn-danger" type="button"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete from anomalies</button>
     </div>
 </div>
 
