@@ -1,78 +1,108 @@
 img {
-    border-radius: 50%;
+  border-radius: 50%;
 }
 .datetime {
-    font-style: italic;
+  font-style: italic;
 }
 .rando {
-    margin: 50px;
-    float: left;
+  margin: 50px;
+  float: left;
 }
 .rando-user {
-    padding: 20px;
-    border-radius: 30px;
-    margin-top: 20px;
-    background-color: #EEE;
-    float: left;
-    display: inline-block;
+  padding: 20px;
+  border-radius: 30px;
+  margin-top: 20px;
+  background-color: #EEE;
+  float: left;
+  display: inline-block;
 }
 .rando-stranger {
-    margin-left: 200px;
-    display: inline-block;
+  margin-left: 200px;
+  display: inline-block;
 }
 .rando-pair {
-    margin-bottom: 80px;
+  margin-bottom: 80px;
 }
 .info {
-    text-align: center;
-    margin-bottom: 30px;
+  text-align: center;
+  margin-bottom: 30px;
 }
 .user-info-header {
-    margin-bottom: 120px;
+  margin-bottom: 120px;
 }
 .not-important {
-    font-size: 0.7em;
+  font-size: 0.7em;
 }
 #auth-container {
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    background-color: white;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: white;
 }
 .pie {
-    width: 590px;
-    height: 500px;
-    float: left;
+  width: 590px;
+  height: 500px;
+  float: left;
 }
 #log td {
-    white-space: pre;
+  white-space: pre;
 }
 
 .star-active {
-    color: gold !important;
+  color: gold !important;
 }
 .star {
-    overflow:hidden;
-    white-space:nowrap;
-    cursor:pointer;
-    font-size:200%;
-    color:#ddd;
-    text-decoration: none !important;
+  overflow:hidden;
+  white-space:nowrap;
+  cursor:pointer;
+  font-size:200%;
+  color:#ddd;
+  text-decoration: none !important;
 }
 .star:before {
-    content:'★';
+  content:'★';
 }
 
 .btn-search {
-    margin-top: 7px;
-    margin-left: 7px;
+  margin-top: 7px;
+  margin-left: 7px;
 }
 
 .calendar-rando {
-    float: left;
-    width: 500px;
-    margin-left: 10px;
-    margin-right: 10px;
+  float: left;
+  width: 500px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.anomaly {
+  margin: 50px;
+  float: left;
+  padding: 20px;
+  border-radius: 30px;
+  margin-top: 20px;
+  background-color: #222;
+  float: left;
+  display: inline-block;
+  color: white;
+}
+
+.anomaly .randoId {
+  color: #d94949;
+}
+
+.anomaly-controls {
+  padding-top: 20px;
+}
+
+.anomaly-controls button {
+  width: 100%;
+  margin-top: 5px;
+  display: block;
+}
+
+.rotate-90 {
+  transform: rotate(90deg);
 }
