@@ -29,7 +29,7 @@ randoApp.controller("ExchangeController", function($scope, $http, $location) {
   };
 
   $scope.getRandosIds = function (exchange) {
-    return Array.from(new Set(exchange.metrics.map(metrics => metrics.randoId.substring(0, 6) + " - " + exchange.randos.filter(rando => {return metrics.randoId === rando.randoId})[0].email))).sort();
+    return Array.from(new Set(exchange.metrics.map(metrics => { return {randoId: metrics.randoId, title: metrics.randoId.substring(0, 6) + " - " + exchange.randos.filter(rando => {return metrics.randoId === rando.randoId})[0].email} ))).sort();
   };
 
   $scope.getMarksForRandoId = function (randoId, exchange) {
