@@ -150,7 +150,7 @@ img {
 .mark-bad {
   background-color: #d9534f;
 }
-.mark-normal {
+.mark-nothing {
   background-color: #777;
 }
 .mark-good {
