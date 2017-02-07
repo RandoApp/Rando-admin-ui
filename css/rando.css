@@ -106,3 +106,7 @@ img {
 .rotate-90 {
   transform: rotate(90deg);
 }
+.exchange-rando {
+  width: 128px;
+  height: 128px;
+}

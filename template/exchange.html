@@ -1,1 +1,9 @@
 <h2 class="sub-header">{{ exchange.length }} logs ready</h2>
+
+<button type="btn">Back</button><button type="btn">Next</button>
+
+<hr/>
+
+<div data-ng-repeat="rando in exchange[exchangeIndex].randos">
+  <img class="exchange-rando" src="http://img.s.rando4me.s3.amazonaws.com/{{rando.randoId}}.jpg"/>
+</div>
