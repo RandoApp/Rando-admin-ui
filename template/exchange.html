@@ -31,8 +31,8 @@
  <th ng-repeat="metrica in getAllMetrics(exchange[exchangeIndex])">{{metrica}}</th>
 </thead>
 <tbody>
-<tr ng-repeat="randoId in getRandosIds()"> 
+<tr ng-repeat="randoId in getRandosIds(exchange[exchangeIndex])"> 
 <th scope="row">{{randoId}}</th> 
-  <td ng-repeat="mark in getMarksForRandoId(randoId)">{{mark.mark}}</td>
+  <td ng-repeat="mark in getMarksForRandoId(randoId, exchange[exchangeIndex])">{{mark.mark}}</td>
 </tbody> 
 </table>
