@@ -5,7 +5,7 @@ randoApp.controller("ExchangeController", function($scope, $http, $location) {
   $scope.nextExchange = function () {
     $scope.exchangeIndex++;
     if ($scope.exchangeIndex >= $scope.exchange.length ) {
-      $scope.exchangeIndex = $scope.exchangeIndex.length - 1;
+      $scope.exchangeIndex = $scope.exchange.length - 1;
     }
   };
 
