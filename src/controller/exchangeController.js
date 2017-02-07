@@ -29,11 +29,11 @@ randoApp.controller("ExchangeController", function($scope, $http, $location) {
   };
 
   $scope.getRandosIds = function (exchange) {
-    return Array.from(new Set(exchange.metics.map(metrics => metrics.randoId))).sort();
+    return Array.from(new Set(exchange.metrics.map(metrics => metrics.randoId))).sort();
   };
 
   $scope.getMarksForRandoId = function (randoId, exchange) {
-    var marks = exchange.metics.filter(metrics => {return randoId === metrics.randoId});
+    var marks = exchange.metrics.filter(metrics => {return randoId === metrics.randoId});
     marks.sort((a,b) => {return (a.metrica > b.metrica) ? 1 : ((b.metrica > a.metrica) ? -1 : 0);}); 
     return marks;
   };
