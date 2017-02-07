@@ -147,12 +147,12 @@ img {
   border-color: purple ;
 }
 
-.mark-bad: {
-  background-color: red;
+.mark-bad {
+  background-color: #d9534f;
 }
-.mark-normal: {
-  background-color: grey;
+.mark-normal {
+  background-color: #777;
 }
-.mark-good: {
-  background-color: green;
+.mark-good {
+  background-color: #5cb85c;
 }
