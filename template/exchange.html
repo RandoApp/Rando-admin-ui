@@ -4,50 +4,39 @@
 
 <hr/>
 
-<hr/>
-<h3>All randos:</h3>
-<div data-ng-repeat="rando in exchange[exchangeIndex].randos">
-  <img class="exchange-rando" src="http://{{getDevPrefix()}}img.s.rando4me.s3.amazonaws.com/{{rando.randoId}}.jpg"/>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3>All randos:</h3>
+      <div data-ng-repeat="rando in exchange[exchangeIndex].randos">
+        <img class="exchange-rando" src="http://{{getDevPrefix()}}img.s.rando4me.s3.amazonaws.com/{{rando.randoId}}.jpg"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h3>Chooser:</h3>
+        <img class="exchange-rando" src="http://{{getDevPrefix()}}img.s.rando4me.s3.amazonaws.com/{{exchange[exchangeIndex].chooserId}}.jpg"/>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h3>Marks:</h3>
+      <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>randoId</th>
+          <th ng-repeat="metrica in getAllMetrics(exchange[exchangeIndex])">{{metrica}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="randoId in getRandosIds(exchange[exchangeIndex])"> 
+          <th scope="row">{{ getRandoTitleByRandoId(randoId, exchange[exchangeIndex]) }}</th> 
+            <td ng-repeat="mark in getMarksForRandoId(randoId, exchange[exchangeIndex])">{{mark.mark}}</td>
+      </tbody> 
+      </table>
+    </div>
+  </div>
 </div>
-<hr/>
-
-<br/>
-<br/>
-<br/>
-
-<h3>Choosers:</h3>
-<hr/>
-<div data-ng-repeat="rando in exchange[exchangeIndex].choosers">
-  <img class="exchange-rando" src="http://{{getDevPrefix()}}img.s.rando4me.s3.amazonaws.com/{{rando.randoId}}.jpg"/>
-</div>
-<hr/>
-
-<br/>
-<br/>
-<br/>
-
-<h3>Chooser:</h3>
-<hr/>
-  <img class="exchange-rando" src="http://{{getDevPrefix()}}img.s.rando4me.s3.amazonaws.com/{{exchange[exchangeIndex].chooserId}}.jpg"/>
-<hr/>
-
-<br/>
-<br/>
-<br/>
-
-<hr/>
-<h3>Marks:</h3>
-<table class="table table-bordered">
-<thead>
-  <tr>
-    <th>randoId</th>
-    <th ng-repeat="metrica in getAllMetrics(exchange[exchangeIndex])">{{metrica}}</th>
-  </tr>
-</thead>
-<tbody>
-  <tr ng-repeat="randoId in getRandosIds(exchange[exchangeIndex])"> 
-    <th scope="row">{{ getRandoTitleByRandoId(randoId, exchange[exchangeIndex]) }}</th> 
-      <td ng-repeat="mark in getMarksForRandoId(randoId, exchange[exchangeIndex])">{{mark.mark}}</td>
-</tbody> 
-</table>
-<hr/>
