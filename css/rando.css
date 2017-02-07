@@ -156,3 +156,11 @@ img {
 .mark-good {
   background-color: #5cb85c;
 }
+
+.hight-chooser {
+  background-color: gold;
+}
+
+.hight-choosen {
+  background-color: purple;
+}
