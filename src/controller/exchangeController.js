@@ -25,7 +25,7 @@ randoApp.controller("ExchangeController", function($scope, $http, $location) {
   };
 
   $scope.getAllMetrics = function (exchange) {
-    return Array.from(new Set(exchange.metics.map(metrics => metrics.metrica))).sort();
+    return Array.from(new Set(exchange.metrics.map(metrics => metrics.metrica))).sort();
   };
 
   $scope.getRandosIds = function (exchange) {
