@@ -126,3 +126,8 @@ img {
   border-style: solid;
   border-width: 4px;
 }
+
+.chooser-select-choosen {
+  font-size: 36px;
+  float: left;
+}
