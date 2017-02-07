@@ -1,6 +1,6 @@
 <h2 class="sub-header">{{ exchange.length }} logs ready</h2>
 
-<button type="btn" ng-click="exchangeIndex--">Back</button>{{ exchangeIndex }} / {{ exchange.length }}<button type="btn" ng-click="exchangeIndex++">Next</button>
+<button type="btn" ng-click="prevExchange()">Prev</button>{{ exchangeIndex + 1 }} / {{ exchange.length }}<button type="btn" ng-click="nextExchange()">Next</button>
 
 <hr/>
 
