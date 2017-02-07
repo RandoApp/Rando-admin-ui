@@ -144,6 +144,15 @@ img {
 .super-choosen {
   border-style: solid;
   border-width: 4px; 
-  border-color: purple;
+  border-color: purple ;
 }
+
+.mark-bad: {
+  background-color: red;
+}
+.mark-normal: {
+  background-color: grey;
+}
+.mark-good: {
+  background-color: green;
 }
