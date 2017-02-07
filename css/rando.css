@@ -111,3 +111,11 @@ img {
   height: 128px;
   float: left;
 }
+
+.chooser {
+  border-style: dotted;
+}
+
+.choosen {
+  border-style: dashed;
+}

@@ -42,6 +42,10 @@ randoApp.controller("ExchangeController", function($scope, $http, $location) {
     return marks;
   };
 
+  $scope.isRandoChooser = function (randoId, exchange) {
+    return exchange.choosers.filter(chooser => {return randoId === chooser.randoId}).length > 0;
+  };
+
   $http.get("/exchangelogs?limit=50").success(function (exchange) {
     $scope.exchange = exchange;
     $scope.exchangeIndex = 0;
