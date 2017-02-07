@@ -12,6 +12,8 @@
 <hr/>
 
 <br/>
+<br/>
+<br/>
 
 <h3>Choosers:</h3>
 <hr/>
@@ -20,12 +22,21 @@
 </div>
 <hr/>
 
+<br/>
+<br/>
+<br/>
 
 <h3>Chooser:</h3>
 <hr/>
   <img class="exchange-rando" src="http://{{getDevPrefix()}}img.s.rando4me.s3.amazonaws.com/{{exchange[exchangeIndex].chooserId}}.jpg"/>
 <hr/>
 
+<br/>
+<br/>
+<br/>
+
+<hr/>
+<h3>Marks:</h3>
 <table class="table table-bordered">
 <thead> <tr> <th>randoId</th>
  <th ng-repeat="metrica in getAllMetrics(exchange[exchangeIndex])">{{metrica}}</th>
@@ -36,3 +47,4 @@
   <td ng-repeat="mark in getMarksForRandoId(randoId, exchange[exchangeIndex])">{{mark.mark}}</td>
 </tbody> 
 </table>
+<hr/>
