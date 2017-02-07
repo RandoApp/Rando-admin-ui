@@ -114,8 +114,15 @@ img {
 
 .chooser {
   border-style: dotted;
+  border-width: 4px;
 }
 
 .choosen {
   border-style: dashed;
+  border-width: 4px;
+}
+
+.chooser.choosen {
+  border-style: solid;
+  border-width: 4px;
 }
