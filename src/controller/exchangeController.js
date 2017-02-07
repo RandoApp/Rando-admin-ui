@@ -45,6 +45,10 @@ randoApp.controller("ExchangeController", function($scope, $http, $location) {
   $scope.isRandoChooser = function (randoId, exchange) {
     return exchange.choosers.filter(chooser => {return randoId === chooser.randoId}).length > 0;
   };
+  
+  $scope.getPrettyDateTime = function (time) {
+    return moment.utc(time).format('DD MMMM YYYY, HH:mm:ss');
+  }
 
   $http.get("/exchangelogs?limit=50").success(function (exchange) {
     $scope.exchange = exchange;

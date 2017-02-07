@@ -7,9 +7,14 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
+      <h1>Exchange at: {{ getPrettyDateTime(exchange[exchangeIndex].exchangedAt) }}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
       <h3>All randos:</h3>
       <div data-ng-repeat="rando in exchange[exchangeIndex].randos">
-        <img class="exchange-rando" ng-class="{'chooser': isRandoChooser(rando.randoId, exchange[exchangeIndex]), 'choosen': rando.chosenRandoId}" src="http://{{getDevPrefix()}}img.s.rando4me.s3.amazonaws.com/{{rando.randoId}}.jpg"/>
+        <img class="exchange-rando" ng-class="{'chooser': isRandoChooser(rando.randoId, exchange[exchangeIndex]), 'choosen': rando.chosenRandoId ? rando.chosenRandoId.length > 0 : false}" src="http://{{getDevPrefix()}}img.s.rando4me.s3.amazonaws.com/{{rando.randoId}}.jpg"/>
       </div>
     </div>
   </div>
