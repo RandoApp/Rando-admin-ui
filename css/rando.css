@@ -109,4 +109,5 @@ img {
 .exchange-rando {
   width: 128px;
   height: 128px;
+  float: left;
 }

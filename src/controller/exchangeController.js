@@ -1,6 +1,6 @@
 var randoApp = angular.module("randoApp");
 
-randoApp.controller("ExchangeController", function($scope, $http, $routeParams) {
+randoApp.controller("ExchangeController", function($scope, $http, $location) {
 
   $scope.nextExchange = function () {
     $scope.exchangeIndex++;
@@ -13,6 +13,14 @@ randoApp.controller("ExchangeController", function($scope, $http, $routeParams) 
     $scope.exchangeIndex--;
     if ($scope.exchangeIndex <= 0) {
       $scope.exchangeIndex = 0;
+    }
+  };
+
+  $scope.getDevPrefix = function () {
+    if ($location.host().indexOf("dev") !== -1) {
+      return "dev.";
+    } else {
+      return "";
     }
   };
 

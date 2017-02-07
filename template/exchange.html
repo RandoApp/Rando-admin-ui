@@ -5,5 +5,5 @@
 <hr/>
 
 <div data-ng-repeat="rando in exchange[exchangeIndex].randos">
-  <img class="exchange-rando" src="http://img.s.rando4me.s3.amazonaws.com/{{rando.randoId}}.jpg"/>
+  <img class="exchange-rando" src="http://{{getDevPrefix()}}img.s.rando4me.s3.amazonaws.com/{{rando.randoId}}.jpg"/>
 </div>
