@@ -1,13 +1,13 @@
 <h2 class="sub-header">{{ exchange.length }} logs ready</h2>
 
-<button type="btn" ng-click="prevExchange()">Prev</button>{{ exchangeIndex + 1 }} / {{ exchange.length }}<button type="btn" ng-click="nextExchange()">Next</button>
+<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ng-click="prevExchange()"></button>{{ exchangeIndex + 1 }} / {{ exchange.length }}<button type="button" class="btn btn-default glyphicon glyphicon-chevron-right" ng-click="nextExchange()"></button>
 
 <hr/>
 
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h1>Exchange at: {{ getPrettyDateTime(exchange[exchangeIndex].exchangedAt) }}</h1>
+      <h1>{{ getPrettyDateTime(exchange[exchangeIndex].exchangedAt) }}</h1>
     </div>
   </div>
   <div class="row">
