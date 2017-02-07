@@ -33,7 +33,7 @@ randoApp.controller("ExchangeController", function($scope, $http, $location) {
   };
 
   $scope.getMarksForRandoId = function (randoId) {
-    var marks = exchange.metics.filter(metrics => {{return randoId === metrics.randoId)));
+    var marks = exchange.metics.filter(metrics => {return randoId === metrics.randoId});
     marks.sort((a,b) => {return (a.metrica > b.metrica) ? 1 : ((b.metrica > a.metrica) ? -1 : 0);}); 
     return marks;
   };
