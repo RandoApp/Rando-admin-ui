@@ -35,6 +35,10 @@ randoApp.config(['$routeProvider',
       templateUrl: '/template/anomalies.html',
       controller: 'AnomaliesController'
     })
+    .when('/exchange', {
+      templateUrl: '/template/exchange.html',
+      controller: 'ExchangeController'
+    })
     .when('/calendar', {
       templateUrl: '/template/calendar.html',
       controller: 'CalendarController'
