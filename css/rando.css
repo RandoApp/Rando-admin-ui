@@ -106,3 +106,62 @@ img {
 .rotate-90 {
   transform: rotate(90deg);
 }
+.exchange-rando {
+  width: 128px;
+  height: 128px;
+  float: left;
+}
+
+.chooser {
+  border-style: dotted;
+  border-width: 4px;
+}
+
+.choosen {
+  border-style: dashed;
+  border-width: 4px;
+}
+
+.chooser.choosen {
+  border-style: solid;
+  border-width: 4px;
+}
+
+.chooser-select-choosen {
+  font-size: 36px;
+  float: left;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 40px;
+}
+
+.super-chooser {
+  border-style: solid;
+  border-width: 4px; 
+  border-color: gold;
+}
+
+.super-choosen {
+  border-style: solid;
+  border-width: 4px; 
+  border-color: purple ;
+}
+
+.mark-bad {
+  background-color: #d9534f;
+}
+.mark-nothing {
+  background-color: #777;
+}
+.mark-good {
+  background-color: #5cb85c;
+}
+
+.hight-chooser {
+  background-color: gold;
+}
+
+.hight-choosen {
+  background-color: purple;
+  color: white;
+}

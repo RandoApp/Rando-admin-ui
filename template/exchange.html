@@ -1,0 +1,51 @@
+<h2 class="sub-header">{{ exchange.length }} logs ready</h2>
+
+<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ng-click="prevExchange()"></button>{{ exchangeIndex + 1 }} / {{ exchange.length }}<button type="button" class="btn btn-default glyphicon glyphicon-chevron-right" ng-click="nextExchange()"></button>
+
+<hr/>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>{{ getPrettyDateTime(exchange[exchangeIndex].exchangedAt) }}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h3>All randos:</h3>
+      <div data-ng-repeat="rando in exchange[exchangeIndex].randos">
+        <img class="exchange-rando" ng-class="{'super-chooser': rando.randoId === exchange[exchangeIndex].chooserId, 'super-choosen':  rando.randoId === exchange[exchangeIndex].choosenId, 'chooser': isRandoChooser(rando.randoId, exchange[exchangeIndex]), 'choosen': rando.chosenRandoId ? rando.chosenRandoId.length > 0 : false}" src="http://{{getDevPrefix()}}img.s.rando4me.s3.amazonaws.com/{{rando.randoId}}.jpg"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h3>Chooser select:</h3>
+        <img class="exchange-rando" src="http://{{getDevPrefix()}}img.s.rando4me.s3.amazonaws.com/{{exchange[exchangeIndex].chooserId}}.jpg"/>
+        <span class="chooser-select-choosen glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+        <img class="exchange-rando" src="http://{{getDevPrefix()}}img.s.rando4me.s3.amazonaws.com/{{exchange[exchangeIndex].choosenId}}.jpg"/>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h3>Marks:</h3>
+      <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>randoId</th>
+          <th ng-repeat="metrica in getAllMetrics(exchange[exchangeIndex])">{{metrica}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="randoId in getRandosIds(exchange[exchangeIndex])"> 
+          <th scope="row" ng-class="{ 'hight-chooser': randoId == exchange[exchangeIndex].chooserId, 'hight-choosen': randoId == exchange[exchangeIndex].choosenId }">
+            {{ getRandoTitleByRandoId(randoId, exchange[exchangeIndex]) }}
+          </th> 
+            <td ng-repeat="mark in getMarksForRandoId(randoId, exchange[exchangeIndex])" ng-class="{'mark-bad': mark.mark < 0, 'mark-nothing': mark.mark == 0, 'mark-good': mark.mark >0}">{{mark.mark}}</td>
+      </tbody> 
+      </table>
+    </div>
+  </div>
+</div>
