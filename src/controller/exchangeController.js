@@ -5,14 +5,14 @@ randoApp.controller("ExchangeController", function($scope, $http, $location) {
   $scope.nextExchange = function () {
     $scope.exchangeIndex++;
     if ($scope.exchangeIndex >= $scope.exchange.length ) {
-      $scope.exchangeIndex = $scope.exchange.length - 1;
+      $scope.exchangeIndex = 0;
     }
   };
 
   $scope.prevExchange = function () {
     $scope.exchangeIndex--;
     if ($scope.exchangeIndex <= 0) {
-      $scope.exchangeIndex = 0;
+      $scope.exchangeIndex = $scope.exchange.length - 1;
     }
   };
 
@@ -50,7 +50,7 @@ randoApp.controller("ExchangeController", function($scope, $http, $location) {
     return moment.utc(time).format('DD MMMM YYYY, HH:mm:ss');
   }
 
-  $http.get("/exchangelogs?limit=50").success(function (exchange) {
+  $http.get("/exchangelogs?limit=800").success(function (exchange) {
     $scope.exchange = exchange;
     $scope.exchangeIndex = 0;
   });

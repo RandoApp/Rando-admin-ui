@@ -1,0 +1,26 @@
+<h2 class="sub-header">Scripts</h2>
+
+<button type="button" class="btn btn-default btn-script" ng-click="runScript(script)" ng-repeat="script in scripts">
+  {{pritty(script)}}
+</button>
+
+<hr/>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Statistic</h1><h3>({{pritty(executedScript)}}):</h3>
+      <div class="well">{{stats}}</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Output</h1><h3>({{pritty(executedScript)}}):</h3>
+      <div class="well">{{output}}</div>
+    </div>
+  </div>
+</div>
