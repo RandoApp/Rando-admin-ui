@@ -3,7 +3,7 @@ var randoApp = angular.module("randoApp");
 randoApp.controller("ScriptsController", function($scope, $http, $location) {
   $scope.output = {};
   $scope.stats = {};
-  $scope.executedScript = {};
+  $scope.executedScript = "";
   $scope.scripts = [];
 
   $scope.runScript = function (script) {
@@ -15,6 +15,9 @@ randoApp.controller("ScriptsController", function($scope, $http, $location) {
   };
 
   $scope.pritty = function (script) {
+    if (!script) {
+      return "";
+    }
     return script.replace(/-/g, " ");
   };
 
