@@ -1,10 +1,10 @@
 var randoApp = angular.module("randoApp");
 
 randoApp.controller("ScriptsController", function($scope, $http, $location) {
-  $scope.output = "Waiting...";
-  $scope.stats = "Waiting...";
-  $scope.executedScript = "Waiting...";
-  $scope.scripts = "Waiting...";
+  $scope.output = {};
+  $scope.stats = {};
+  $scope.executedScript = {};
+  $scope.scripts = [];
 
   $scope.runScript = function (script) {
     $http.post("/scripts/"+script).success(function (output) {
