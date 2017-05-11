@@ -1,10 +1,8 @@
 var randoApp = angular.module("randoApp");
 
 randoApp.controller("RandosController", function($scope, $http, $routeParams) {
+
     $http.get('/randos').success(function (randos) {
-        for (var i = 0; i < randos.length; i++) {
-            randos[i].creationPritty = moment(randos[i].creation).format('DD MMMM YYYY, HH:mm:ss');
-        }
         $scope.randos = randos;
         $scope.flipRando = function (rando, $event) {
             var img = $event.target;

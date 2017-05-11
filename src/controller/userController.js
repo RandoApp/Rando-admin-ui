@@ -1,17 +1,15 @@
 var randoApp = angular.module("randoApp");
 
 randoApp.controller("UserController", function($scope, $http, $routeParams, $route) {
+
     $http.get('/user?email=' + $routeParams.email).success(function (user) {
         $scope.user = user;
-        $scope.user.banPritty = moment(user.ban).format('DD MMMM YYYY, HH:mm:ss');
 
         for (var i = 0; i < user.in.length; i++) {
             var rando = user.in[i];
-            rando.creationPritty = moment(rando.creation).format('DD MMMM YYYY, HH:mm:ss');
         }
         for (var i = 0; i < user.out.length; i++) {
             var rando = user.out[i];
-            rando.creationPritty = moment(rando.creation).format('DD MMMM YYYY, HH:mm:ss');
         }
 
         //TODO: DRY . see starsController - same function.
@@ -56,18 +54,13 @@ randoApp.controller("UserController", function($scope, $http, $routeParams, $rou
             }
             $http({
                 method: "POST",
-                url: "/" + action + "?token=" + localStorage.getItem("authToken"),
-                data: {
-                    email: email,
-                }
+                url: "/" + action + "/" + email,
             }).success(function (res) {
-                alert(action + "ned: " + email);
-                if (res.command == "ban" && res.result == "done") {
-                    $scope.user.ban = Date.now() + 99*365*24*60*60*1000;
-                }
-
-                if (res.command == "unban" && res.result == "done") {
-                    $scope.user.ban = 0;
+                alert(JSON.stringify(res));
+                if (res.ban === 0) {
+                    $scope.user.ban = null;
+                } else {
+                 $scope.user.ban = res.ban;
                 }
 
                 if ($scope.user.ban > 0) {

@@ -12,10 +12,10 @@
     <div class="anomaly">
       <div class="info">
         <div class="randoId">id: {{ anomaly.rando.randoId }}</div>
-        <div class="datetime">Detected at: {{ anomaly.detectedAtPritty }}</div>
+        <div class="datetime">Detected at: {{ commonCtrl.makeDatePritty(anomaly.detectedAt) }}</div>
         <h2><span class="label label-danger">{{ anomaly.discrepancyReason }}</span></h2>
         <div class="user"><a href="#/user/{{ anomaly.rando.email }}">{{ anomaly.rando.email }}</a></div>
-        <div class="datetime">{{ anomaly.rando.creationPritty }}</div>
+        <div class="datetime">{{ commonCtrl.makeDatePritty(anomaly.rando.creation) }}</div>
         <div class="location not-important">lat: {{ anomaly.rando.location.latitude}} long: {{ anomaly.rando.location.longitude }}</div>
       </div>
       <img src="{{ anomaly.rando.imageSizeURL.small }}" data-ng-click="flipRando(rando, $event)"/>

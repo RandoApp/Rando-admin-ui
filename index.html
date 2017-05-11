@@ -46,7 +46,6 @@
           <li class="active"><a href="#">Status</a></li>
           <li><a href="#/reports">Reports</a></li>
           <li><a href="#/randos">Randos</a></li>
-          <li><a href="#/stars">Stars</a></li>
           <li><a href="#/anomalies">Anomalies</a></li>
           <li><a href="#/exchange">Exchanger</a></li>
           <li><a href="#/calendar">Calendar</a></li>
@@ -54,7 +53,7 @@
         </ul>
       </div>
       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-        <div data-ng-view=""></div>
+        <div ng-controller="CommonController as commonCtrl" data-ng-view=""></div>
       </div>
     </div>
   </div>
@@ -74,9 +73,9 @@
   <script src="/bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
   <script src="/bower_components/angular-loading-bar/build/loading-bar.min.js"></script>
   <script src="/app.js"></script>
+  <script src="/src/controller/commonController.js"></script>
   <script src="/src/controller/userController.js"></script>
   <script src="/src/controller/randosController.js"></script>
-  <script src="/src/controller/starsController.js"></script>
   <script src="/src/controller/statusController.js"></script>
   <script src="/src/controller/tabsController.js"></script>
   <script src="/src/controller/anomaliesController.js"></script>
