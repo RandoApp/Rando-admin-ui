@@ -11,10 +11,6 @@ randoApp.config(['$routeProvider',
       templateUrl: '/template/randos.html',
       controller: 'RandosController'
     })
-    .when('/stars', {
-      templateUrl: '/template/stars.html',
-      controller: 'StarsController'
-    })
     .when('/user/:email', {
       templateUrl: '/template/user.html',
       controller: 'UserController'

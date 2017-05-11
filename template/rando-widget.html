@@ -3,7 +3,7 @@
   <div class="info">
     <a href="javascript:void(0);" data-ng-click="starOrUnstar(rando.email, rando.randoId, $event)" class="star"></a>
     <h3 class="user"><a href="#/user/{{ rando.email }}">{{ rando.email }}</a></h3>
-    <div class="datetime">{{ rando.creationPritty }}</div>
+    <div class="datetime">{{  commonCtrl.makeDatePritty(rando.creation) }}</div>
     <div class="randoId not-important">id: {{ rando.randoId }}</div>
     <div class="location not-important">lat: {{ rando.location.latitude}} long: {{ rando.location.longitude }}</div>
     <div data-ng-if="rando.user.delete != 1">

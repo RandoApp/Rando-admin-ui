@@ -5,7 +5,7 @@
     <tr><td>id</td><td>{{user._id}}</td></tr>
     <tr><td>authToken</td><td>{{user.authToken}}</td></tr>
     <tr><td>ip</td><td>{{user.ip}}</td></tr>
-    <tr><td>ban</td><td>{{user.banPritty}}</td></tr>
+    <tr><td>ban</td><td>{{ commonCtrl.makeDatePritty(user.ban) }} [ {{user.ban}} ]</td></tr>
     <tr><td>googleId</td><td>{{user.googleId}}</td></tr>
     <tr><td>facebookId</td><td>{{user.facebookId}}</td></tr>
   </table>
