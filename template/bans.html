@@ -1,0 +1,67 @@
+<div class="container" ng-controller="BansController as bansCtrl">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label>Start ban interval:</label>
+        <div class="input-group date" id="startdatetimepicker">
+          <input type="text" class="form-control" />
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+      <label>End ban interval:</label>
+        <div class="input-group date" id="enddatetimepicker">
+          <input type="text" class="form-control" />
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      offset: <input type="text" ng-init="offset = 0" ng-model="offset" placeholder="offset" class="form-control" />
+    </div>
+    <div class="col-md-6">
+      limit: <input type="text" ng-init="limit = 100" ng-model="limit" placeholder="limit" class="form-control" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <button class="btn btn-lg btn-default" type="button" ng-click="bansCtrl.find();">Go</button>
+    </div>
+  </div>
+  <div class="row" ng-show="bans.length > 0">
+    <div class="col-md-12">
+     <h1>Found {{ bans.length }} bans</h1>
+      <ul>
+        <li data-ng-repeat="ban in bans">
+          <a href="#/user/{{ ban.email }}">{{ ban.email }}</a>
+        </li>
+      </ul>
+     </div>
+    </div>
+  </div>
+
+<script type="text/javascript">
+var dateTimeConfig = {
+  format: "DD/MM/YYYY HH:mm:ss",
+  showTodayButton: true
+};
+
+$(function () {
+  $("#startdatetimepicker").datetimepicker(dateTimeConfig);
+  $("#enddatetimepicker").datetimepicker(dateTimeConfig);
+
+  $("#startdatetimepicker").data("DateTimePicker").date(moment().utc());
+
+  var goodLifeTime = moment().utc();
+  goodLifeTime.year(goodLifeTime.year() + 3287);  
+  $("#enddatetimepicker").data("DateTimePicker").date(goodLifeTime);
+});
+</script>
