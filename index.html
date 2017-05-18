@@ -33,7 +33,7 @@
           <li><button type="button" class="btn btn-search glyphicon glyphicon-search" ng-click="tabs.search()"></button></li>
         </ul>
         <form class="navbar-form navbar-right">
-          <input id="search" class="form-control" placeholder="Search user..." type="text">
+          <input id="search" class="form-control" placeholder="Search user..." type="text" on-enter="tabs.search()">
         </form>
       </div>
     </div>
@@ -85,5 +85,6 @@
   <script src="/src/controller/scriptsController.js"></script>
   <script src="/src/controller/bansController.js"></script>
   <script src="/src/directive/randoWidget.js"></script>
+  <script src="/src/directive/onEnter.js"></script>
 </body>
 </html>
