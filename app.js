@@ -39,6 +39,10 @@ randoApp.config(['$routeProvider',
       templateUrl: '/template/calendar.html',
       controller: 'CalendarController'
     })
+    .when('/bans', {
+      templateUrl: '/template/bans.html',
+      controller: 'BansController'
+    })
     .when('/scripts', {
       templateUrl: '/template/scripts.html',
       controller: 'ScriptsController'
