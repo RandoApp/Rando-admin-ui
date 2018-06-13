@@ -1,6 +1,10 @@
-angular.module("randoApp").directive("randoWidget", function() {
+angular.module("randoApp").directive("randoWidget", ['$http', ($http) => {
   return {
-    restrict: "E",
-    templateUrl: "/template/rando-widget.html"
+    restrict: "AE",
+    templateUrl: "/template/rando-widget.html",
+    link: function($scope, element, attributes) {
+      var randoId = attributes.randoid;
+      $http.get('/label/' + randoId).success(function(labels) {});
+    }
   };
-});
+}]);
