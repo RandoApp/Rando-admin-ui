@@ -137,13 +137,13 @@ img {
 
 .super-chooser {
   border-style: solid;
-  border-width: 4px; 
+  border-width: 4px;
   border-color: gold;
 }
 
 .super-choosen {
   border-style: solid;
-  border-width: 4px; 
+  border-width: 4px;
   border-color: purple ;
 }
 
@@ -164,4 +164,18 @@ img {
 .hight-choosen {
   background-color: purple;
   color: white;
+}
+
+rando-widget .label {
+  padding-left: 2.6em;
+  padding-right: 2.6em;
+  margin-left: 10px;
+  cursor: pointer;
+}
+rando-widget .label:hover {
+  opacity: 0.7;
+}
+
+.margin-top-10 {
+  margin-top: 10px;
 }
